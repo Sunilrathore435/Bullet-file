@@ -81,18 +81,23 @@ For any questions or support, reach out to the project author:
 
 Author: Sunil Rathore
 
-GitHub: [<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" width="30"/>](https://github.com/Sunilrathore435)  
-
-LinkedIn: [<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="30"/>](https://www.linkedin.com/in/sunil-rathore/)
+[![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sunilrathore435)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sunil-rathore-548/)
 
 🎨 Screenshots (Optional)
 
 You can include some attractive screenshots of your app here to make the README visually appealing. Example:
 
 Login Page
+<img width="1897" height="904" alt="Screenshot 2025-09-10 191852" src="https://github.com/user-attachments/assets/cd7af825-71ec-4802-8d35-580cc5080f78" />
 
 Dashboard
+<img width="1895" height="913" alt="Screenshot 2025-09-10 191949" src="https://github.com/user-attachments/assets/38ab9bdb-7da0-4611-bb47-655e1a8a28df" />
+
 
 File Upload/Download
+<img width="559" height="793" alt="Screenshot 2025-09-10 192011" src="https://github.com/user-attachments/assets/4c6ceb5d-2fc5-435c-9960-813a0afbd399" />
 
 Shared File View
+<img width="1911" height="904" alt="Screenshot 2025-09-10 192031" src="https://github.com/user-attachments/assets/cec10fc2-4314-440f-98da-f1053c31b2ed" />
+
