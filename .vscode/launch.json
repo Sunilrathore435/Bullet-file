@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BulletFileApplication<BulletFile>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.BulletFile.BulletFileApplication",
+            "projectName": "BulletFile",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

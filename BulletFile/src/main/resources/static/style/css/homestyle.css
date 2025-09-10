@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    background: #040c21;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-image: radial-gradient(circle at center, #0a1123, #040c21);
+}
+
+#particles-js {
+    position: fixed; /* Changed to fixed to stay in viewport */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Main hero container */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 90vh; /* Takes up most of the screen */
+    padding: 20px;
+    z-index: 1;
+    margin: 0 auto; /* Center horizontally */
+    box-sizing: border-box;
+}
+
+.animation-side {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-side {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-animation {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 15px;
+    font-weight: 300;
+    max-width: 400px;
+}
+
+.card {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+.google-btn {
+    background: linear-gradient(90deg,#db4437,#ff6b6b);
+    color: white;
+}
+
+.github-btn {
+    background: linear-gradient(90deg,#333333,#6e5494);
+    color: white;
+}
+
+/* --- NEW: About Section Styling --- */
+.about-section {
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: #37a7ff;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #37a7ff;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Footer and Avatar Styling */
+.developer-tag {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.805);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    position: sticky;
+    z-index: 1;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    
+}
+
+.developer-avatar {
+    width: 80px; /* Increased size */
+    height: 80px; /* Increased size */
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.developer-avatar:hover {
+    transform: scale(1.1); /* Grow on hover */
+    border-color: #37a7ff; /* Change border color on hover */
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(13, 26, 51, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 167, 255, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-brand-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Provides space between the logo and the text */
+}
+
+.app-logo {
+    height: 40px; /* Adjust this size to fit your specific logo */
+    width: auto; /* Ensures the logo's aspect ratio is maintained */
+}
+
+.app-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

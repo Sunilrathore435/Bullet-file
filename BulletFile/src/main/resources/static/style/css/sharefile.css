@@ -1,0 +1,228 @@
+/* Core styling from the project theme */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: #040c21;
+    background-image: radial-gradient(circle at center, #0a1123, #040c21);
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(13, 26, 51, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 167, 255, 0.2);
+}
+.app-name {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#db4437,#ff6b6b);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.logout-button:hover { transform: scale(1.05); }
+
+/* Main Content Centering */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Glassmorphism Card for Sharing */
+.share-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.share-card h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.file-details p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.file-details span {
+    font-weight: 600;
+    color: #fff;
+}
+.action-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.action-button:hover { transform: scale(1.05); }
+.download-button {
+    background: linear-gradient(90deg,#6d5dfc,#46c2ff);
+    margin-top: 30px;
+}
+.copy-button { background: linear-gradient(90deg,#37a7ff,#7f6dff); }
+.share-section {
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 25px;
+}
+.url-input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+#shareUrl {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Back Link and Bot Container */
+.back-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+/* UPDATED: Styling for the new web component */
+.back-link-container dotlottie-wc {
+    width: 60px;
+    height: 60px;
+}
+
+.back-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+.back-link:hover { color: #fff; }
+/* Main Navbar Container */
+/* Main Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(13, 26, 51, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 167, 255, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Common styles for the three sections */
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Left Section: Logo and App Name */
+.navbar-left {
+    flex-grow: 1; /* This is the key. It makes this section fill available space */
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Center Section: Main Page Title */
+.navbar-center {
+    flex-grow: 1; /* This is also key. It shares space equally with the left and right sections */
+    justify-content: center;
+    text-align: center;
+}
+
+/* Right Section: Logout Button */
+.navbar-right {
+    flex-grow: 1; /* This is the key. It makes this section fill available space */
+    justify-content: flex-end;
+}
+
+/* Styles for the Elements */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app-logo {
+    height: 40px;
+    width: auto;
+}
+
+.app-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#db4437,#ff6b6b);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.logout-button:hover { 
+    transform: scale(1.05); 
+}

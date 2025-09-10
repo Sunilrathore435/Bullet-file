@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, #040c21, #0a1123, #1a2349, #0a1123);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#particles-js {
+    position: fixed; width: 100%; height: 100%;
+    z-index: -1; top: 0; left: 0;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px;
+    background: rgba(13, 26, 51, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 167, 255, 0.2);
+    position: sticky; top: 0; z-index: 10;
+}
+.app-name {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logout-button {
+    padding: 10px 20px; border: none; border-radius: 30px;
+    background: linear-gradient(90deg,#db4437,#ff6b6b);
+    color: white; font-weight: 600; cursor: pointer; transition: transform 0.2s;
+}
+.logout-button:hover { transform: scale(1.05); }
+
+/* --- Main Content Layout --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    align-items: flex-start;
+}
+.upload-container, .uploaded-files-container {
+    padding: 30px; border-radius: 20px;
+    background: rgba(22, 29, 53, 0.5);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s;
+}
+.upload-container { flex: 1; min-width: 350px; max-width: 450px; }
+.uploaded-files-container { flex: 2; min-width: 500px; }
+.container-title {
+    text-align: center; margin-bottom: 25px;
+    font-size: 1.7rem; font-weight: 500;
+}
+
+/* --- Upload Form & Success Message Styling --- */
+.drag-drop-area {
+    width: 100%;
+    height: 380px;
+    padding: 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 15px; text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-sizing: border-box; display: flex;
+    flex-direction: column; align-items: center; justify-content: center;
+}
+.drag-drop-area.drag-over {
+    background-color: rgba(55, 167, 255, 0.1);
+    border-color: #37a7ff;
+}
+.file-input { display: none; }
+.custom-file-upload {
+    display: inline-block; padding: 12px 25px; border-radius: 30px;
+    background: #37a7ff; color: white; cursor: pointer;
+    margin-top: 10px; font-weight: 500; transition: transform 0.2s;
+}
+.custom-file-upload:hover { transform: scale(1.05); }
+.file-name { margin-top: 15px; color: #ccc; display: block; text-align: center; }
+.input-group { position: relative; width: 100%; margin-top: 25px; }
+.text-input {
+    width: 100%; padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px; background: transparent;
+    color: white; font-size: 1rem; box-sizing: border-box;
+}
+.upload-button {
+    margin-top: 30px; width: 100%; padding: 15px 0;
+    font-size: 1.1rem; font-weight: 600; border-radius: 30px;
+    border: none; cursor: pointer;
+    background: linear-gradient(90deg,#6d5dfc,#46c2ff);
+    color: white; transition: transform 0.2s;
+}
+.upload-button:hover { transform: scale(1.05); }
+
+/* File Preview Styling */
+.hidden { display: none !important; }
+
+#image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+#file-icon-preview {
+    font-size: 6rem;
+    color: #37a7ff;
+    margin-bottom: 15px;
+}
+
+/* Success Message Styling */
+.upload-success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 15px;
+}
+.success-animation { width: 180px; height: 180px; }
+.success-message-text { font-size: 1.2rem; margin: 0; }
+.upload-another-btn {
+    padding: 12px 25px; border-radius: 30px;
+    background: #37a7ff; color: white;
+    text-decoration: none; font-weight: 500; transition: transform 0.2s;
+}
+.upload-another-btn:hover { transform: scale(1.05); }
+
+/* ADDED: Style for the new server animation */
+.server-confirmation-animation {
+    width: 150px;
+    height: 150px;
+}
+
+/* Enhanced Table Styling */
+.table-wrapper { max-height: 400px; overflow-y: auto; }
+.uploaded-files-table { width: 100%; border-collapse: collapse; }
+.uploaded-files-table th, .uploaded-files-table td {
+    padding: 15px; text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.uploaded-files-table th { background-color: rgba(0,0,0,0.2); font-weight: 500;}
+.uploaded-files-table tbody tr {
+    opacity: 0; animation: fadeIn 0.5s ease-out forwards;
+}
+.uploaded-files-table tbody tr:hover {
+    background-color: rgba(55, 167, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.action-button {
+    background: none; border: none; cursor: pointer;
+    font-size: 1.2rem; transition: transform 0.2s;
+}
+.share-button { color: #37a7ff; }
+.delete-button { color: #ff6b6b; }
+.action-button:hover { transform: scale(1.2); }
+.table-wrapper::-webkit-scrollbar { width: 8px; }
+.table-wrapper::-webkit-scrollbar-track { background: transparent; }
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(55, 167, 255, 0.4);
+    border-radius: 10px; border: 2px solid transparent;
+    background-clip: content-box;
+}
+.table-wrapper::-webkit-scrollbar-thumb:hover { background-color: rgba(55, 167, 255, 0.6); }
+
+/* Keyframe Animations */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Main Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spreads the three sections out */
+    padding: 15px 40px;
+    background: rgba(13, 26, 51, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 167, 255, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Common styles for the three sections */
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Left Section: Logout Button */
+.navbar-left {
+    justify-content: flex-start;
+}
+
+/* Center Section: Main Page Title */
+.navbar-center {
+    flex-grow: 1; /* Allows this section to take up available space */
+    justify-content: center;
+    text-align: center;
+}
+
+/* Right Section: Logo and App Name */
+.navbar-right {
+    justify-content: flex-end;
+    gap: 10px; /* Space between the logo and the name */
+}
+
+/* Styles for the Elements */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(90deg, #37a7ff, #7f6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app-logo {
+    height: 40px;
+    width: auto;
+}
+
+.app-name {
+    font-size: 1.5rem; /* Reduced size to differentiate from the main title */
+    font-weight: 600;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#db4437,#ff6b6b);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.logout-button:hover { 
+    transform: scale(1.05); 
+}
+.navbar-brand-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Provides space between the logo and the text */
+}

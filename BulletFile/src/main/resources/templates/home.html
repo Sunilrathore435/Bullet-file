@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+     <title>Bullet File</title>
+    <link rel="icon" type="image/png" th:href="@{/style/assests/logo.png}" />
+    
+    <script src="https://kit.fontawesome.com/106a3659bb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+       
+        <link rel="stylesheet" th:href="@{/style/css/homestyle.css}" />
+    
+</head>
+<body>
+    <nav class="navbar">
+    <div class="navbar-brand-group">
+        <img th:src="@{/style/assests/logo.png}" alt="Orbit-Drop Logo" class="app-logo">
+        <h1 class="app-name">Bullet-File</h1>
+    </div>
+    <!-- You can add other navigation items here -->
+</nav>
+    <div id="particles-js"></div>
+
+    <main class="main-container">
+        <div class="animation-side">
+            <dotlottie-wc 
+                class="hero-animation"
+                src="https://lottie.host/a334d97d-a2b7-4556-b597-cc5faf947dc6/SqOcairIMU.lottie" 
+                speed="1" 
+                autoplay 
+                loop>
+            </dotlottie-wc>
+        </div>
+
+        <div class="content-side">
+            <div class="header">
+                <h1>Sync Your Digital World</h1>
+                <h2>The simplest way to share files across all your devices, securely and instantly.</h2>
+            </div>
+    
+            <div class="card">
+                <h3>Get Started</h3>
+            <a th:href="@{/oauth2/authorization/google(prompt='select_account')}" class="login-btn google-btn">
+    <i class="fab fa-google"></i> Login with Google
+</a>
+
+                <a th:href="@{/oauth2/authorization/github}" class="login-btn github-btn">
+                    <i class="fab fa-github"></i> Login with GitHub
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <section class="about-section">
+        <h2>Why Choose Our Platform?</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>Secure & Private</h3>
+                <p>Your files are protected with end-to-end encryption. Only you and the people you share with can access your data.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3>Lightning Fast</h3>
+                <p>Our optimized infrastructure ensures your files are uploaded and shared in seconds, with no frustrating wait times.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-desktop feature-icon"></i>
+                <h3>Access Anywhere</h3>
+                <p>Seamlessly share and access your files on any device with a modern web browser. No installation required.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="developer-tag">
+        <img th:src="@{/style/assests/team1 (2).png}" alt="Developer Avatar" class="developer-avatar"/>
+        <span>Developed by <a href="#" style="color:  inherit; text-decoration: none; font-weight: 800;">Sunil</a></span>
+    </footer>
+
+    <script>
+        // Initialize Particles background
+        particlesJS.load('particles-js', 'https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/particles.json');
+    </script>
+</body>
+</html>

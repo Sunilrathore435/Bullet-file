@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullet File</title>
+    <link rel="icon" type="image/png" th:href="@{/style/assests/logo.png}" />
+    <script src="https://kit.fontawesome.com/106a3659bb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" th:href="@{/style/css/sharefile.css}" />
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<nav class="navbar">
+    <!-- Left Section: Logo and App Name -->
+    <div class="navbar-section navbar-left">
+        <img th:src="@{/style/assests/logo.png}" alt="BulletFile Logo" class="app-logo">
+        <h2 class="app-name">Bullet-File</h2>
+    </div>
+
+    <!-- Center Section: Main Title -->
+    <div class="navbar-section navbar-center">
+        <h1 class="page-title">Share Your Files</h1>
+    </div>
+
+    <!-- Right Section: Logout Button -->
+    <div class="navbar-section navbar-right">
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="logout-button">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </form>
+    </div>
+</nav>
+
+<main class="main-container">
+    <div class="share-card">
+        <h1>Share Your File</h1>
+        
+        <div class="file-details">
+            <p>File Name: <span th:text="${file.fileName}">Example_Document.pdf</span></p>
+            <p>Uploaded By: <span th:text="${file.uploadedBy}">Sunil</span></p>
+        </div>
+        
+        <form th:action="@{/files/download/{id}(id=${file.id})}">
+            <button type="submit" class="action-button download-button">
+                <i class="fas fa-download"></i> Download File
+            </button>
+        </form>
+
+        <div class="share-section">
+            <h2>Share This Link</h2>
+            <div class="url-input-group">
+                <input type="text" id="shareUrl" th:value="${shareUrl}" readonly/>
+                <button class="action-button copy-button" onclick="copyToClipboard()">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+        
+        <div class="back-link-container">
+            <dotlottie-wc 
+                src="https://lottie.host/035f8eca-8b0c-4181-8507-e1f4cd82a472/UUZUooLvMa.lottie" 
+                speed="1" 
+                autoplay 
+                loop>
+            </dotlottie-wc>
+            <a href="/files/home" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to File List
+            </a>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    // Initialize Particles.js background
+    particlesJS.load('particles-js', 'https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/particles.json');
+
+    // NOTE: The lottie.loadAnimation() JavaScript is no longer needed!
+    // The web component handles everything automatically.
+
+    // Modern clipboard function
+    function copyToClipboard() {
+        const copyText = document.getElementById("shareUrl");
+        navigator.clipboard.writeText(copyText.value).then(() => {
+            alert("URL copied to clipboard!");
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
