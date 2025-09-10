@@ -93,7 +93,9 @@ Login Page
 Dashboard
 <img width="1895" height="913" alt="Screenshot 2025-09-10 191949" src="https://github.com/user-attachments/assets/38ab9bdb-7da0-4611-bb47-655e1a8a28df" />
 File Upload/Download
-<img width="559" height="793" alt="Screenshot 2025-09-10 192011" src="https://github.com/user-attachments/assets/4c6ceb5d-2fc5-435c-9960-813a0afbd399" />
+
+<img width="559" height="793" alt="Screenshot 2025-09-10 192011" src="https://github.com/user-attachments/assets/07383f00-3e74-447f-b06c-1aca53f84a26" />
+
 Shared File View
 <img width="1911" height="904" alt="Screenshot 2025-09-10 192031" src="https://github.com/user-attachments/assets/cec10fc2-4314-440f-98da-f1053c31b2ed" />
 
